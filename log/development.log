@@ -231,3 +231,321 @@ Processing by HomeController#top as HTML
 Completed 200 OK in 14ms (Views: 13.6ms | Allocations: 5357)
 
 
+Started GET "/" for 127.0.0.1 at 2021-09-13 20:46:49 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.3ms | Allocations: 132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 12570)
+Completed 200 OK in 32ms (Views: 30.5ms | Allocations: 13699)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-13 20:46:49 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  Rendered post/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3946)
+Completed 200 OK in 11ms (Views: 10.4ms | Allocations: 5323)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-13 20:48:50 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  Rendered post/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 12421)
+Completed 200 OK in 24ms (Views: 23.5ms | Allocations: 12798)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-13 20:51:04 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  Rendered post/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3668)
+Completed 200 OK in 6ms (Views: 5.9ms | Allocations: 4044)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-13 20:51:05 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  Rendered post/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3668)
+Completed 200 OK in 7ms (Views: 6.3ms | Allocations: 4044)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-13 20:51:06 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  Rendered post/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3670)
+Completed 200 OK in 7ms (Views: 6.2ms | Allocations: 4049)
+
+
+Started GET "/" for ::1 at 2021-09-13 20:51:07 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3686)
+Completed 200 OK in 8ms (Views: 7.6ms | Allocations: 4011)
+
+
+Started GET "/" for ::1 at 2021-09-13 20:51:50 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3668)
+Completed 200 OK in 10ms (Views: 9.0ms | Allocations: 4044)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-13 21:53:08 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210913144039_create_posts.rb
+
+
+):
+  
+activerecord (6.1.4.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.4.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20210913144039)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210913144039"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-09-13 14:53:25.990451"], ["updated_at", "2021-09-13 14:53:25.990451"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-09-13 21:53:27 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.2ms | Allocations: 238)
+Completed 200 OK in 20ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 1952)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-13 21:53:30 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.2ms | Allocations: 293)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 1072)
+
+
+Started GET "/top" for 127.0.0.1 at 2021-09-13 21:53:32 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.6ms | Allocations: 19399)
+Completed 200 OK in 57ms (Views: 55.4ms | ActiveRecord: 0.0ms | Allocations: 20559)
+
+
+Started GET "/top" for 127.0.0.1 at 2021-09-13 21:53:59 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/top"):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-13 21:54:02 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.5ms | Allocations: 126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3951)
+Completed 200 OK in 11ms (Views: 9.4ms | Allocations: 5077)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-13 21:54:44 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | Allocations: 13484)
+Completed 200 OK in 49ms (Views: 48.0ms | Allocations: 13861)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-09-13 21:54:47 +0700
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3795)
+Completed 200 OK in 8ms (Views: 6.5ms | Allocations: 4302)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-09-13 21:54:52 +0700
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3670)
+Completed 200 OK in 8ms (Views: 6.9ms | Allocations: 4049)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-09-13 21:56:39 +0700
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.5ms | Allocations: 120)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4047)
+Completed 200 OK in 10ms (Views: 9.2ms | Allocations: 5168)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-09-13 21:56:40 +0700
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3698)
+Completed 200 OK in 7ms (Views: 6.1ms | Allocations: 4077)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-13 21:56:40 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  Rendered post/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 124)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3751)
+Completed 200 OK in 9ms (Views: 7.9ms | Allocations: 4659)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-09-13 21:56:41 +0700
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 3834)
+Completed 200 OK in 12ms (Views: 10.9ms | Allocations: 4314)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-13 21:56:42 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.4ms | Allocations: 118)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3783)
+Completed 200 OK in 9ms (Views: 7.5ms | Allocations: 4290)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Belajar Figma Dasar"], ["created_at", "2021-09-13 14:57:15.495667"], ["updated_at", "2021-09-13 14:57:15.495667"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2021-09-13 21:58:12 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.3ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4017)
+Completed 200 OK in 9ms (Views: 8.0ms | Allocations: 5147)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-13 21:58:13 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/post/index.html.erb:3
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 4527)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 8192)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 1.7ms | Allocations: 9424)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Belajar Adobe After Effects"], ["created_at", "2021-09-13 14:58:40.276847"], ["updated_at", "2021-09-13 14:58:40.276847"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/post/index" for 127.0.0.1 at 2021-09-13 21:58:42 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4761)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 5896)
+
+
