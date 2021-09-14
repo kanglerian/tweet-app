@@ -10,4 +10,18 @@ class PostController < ApplicationController
     @post.save
     redirect_to("/post/index")
   end
+  def edit
+    @post = Post.find_by(id: params[:id])
+  end
+  def update
+    @post = Post.find_by(id: params[:id])
+    @post.content = params[:content]
+    @post.save
+    redirect_to("/post/index")
+  end
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
+    redirect_to("/post/index")
+  end
 end

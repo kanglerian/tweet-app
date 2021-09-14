@@ -1,0 +1,13 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">Edit a post</h1>
+    <div class="form">
+    <%= form_tag("/post/#{@post.id}/update") do %>
+      <div class="form-body">
+        <!-- Display @post's content in textarea -->
+        <textarea name="content"><%= @post.content %></textarea>
+        <input type="submit" value="Save">
+      </div>
+      <% end %>
+    </div>
+  </div>

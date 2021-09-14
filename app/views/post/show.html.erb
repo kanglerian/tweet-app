@@ -7,6 +7,10 @@
       <div class="post-time">
         <%= @post.created_at %>
       </div>
+      <div class="post-menus">
+        <%= link_to("Edit", "/post/#{@post.id}/edit") %>
+        <%= link_to("Delete", "/post/#{@post.id}/destroy", {method: "post"})%>
+      </div>
     </div>
   </div>
 </div>
