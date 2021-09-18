@@ -12,9 +12,11 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      image_name: "default_user.jpeg"
+      image_name: "default_user.jpeg",
+      password: params[:password]
     )
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = "Pendaftaran sudah berhasil!"
       redirect_to("/users/#{@user.id}")
     else
@@ -42,8 +44,25 @@ class UsersController < ApplicationController
       render("users/edit")
     end
   end
-  def login_form
+  def form_login
   end
   def login
+    @user = User.find_by(
+      email: params[:email],
+      password: params[:params]
+    )
+    if @user
+      session[:user_id] = @user.id
+      flash[:notice] = "Login berhasil!"
+      redirect_to("/post/index")
+    else
+      @error_message = "Email atau password salah!"
+      render("users/login_form")
+    end
+  end
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "Log out telah berhasil!"
+    redirect_to("/login")
   end
 end

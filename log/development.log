@@ -5238,3 +5238,1415 @@ No template found for UsersController#login, rendering head :no_content
 Completed 204 No Content in 1ms (Allocations: 296)
 
 
+Started GET "/" for 127.0.0.1 at 2021-09-18 14:51:09 +0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 1.8ms | Allocations: 240)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 7220)
+Completed 200 OK in 80ms (Views: 49.6ms | ActiveRecord: 0.0ms | Allocations: 10231)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2021-09-18 14:51:12 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 5466)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 9367)
+Completed 200 OK in 44ms (Views: 36.8ms | ActiveRecord: 1.1ms | Allocations: 11208)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+Started GET "/signup" for 127.0.0.1 at 2021-09-18 14:51:14 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 834)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4871)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 5511)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 14:51:17 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"sasad", "email"=>"dsada"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dsada"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1908)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 5587)
+Completed 200 OK in 47ms (Views: 14.8ms | ActiveRecord: 0.4ms | Allocations: 9361)
+
+
+Started GET "/users/create" for 127.0.0.1 at 2021-09-18 14:59:55 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1508)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1579)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms | Allocations: 4828)
+
+
+  
+ActionView::Template::Error (undefined method `image_name' for nil:NilClass):
+    1: <div class="main user-show">
+    2:   <div class="container">
+    3:     <div class="user">
+    4:       <img src="<%= "/assets/image/#{@user.image_name}" %>">
+    5:       <!-- Display the @user's name -->
+    6:       <h2><%= @user.name %></h2>
+    7:       <!-- Display the @user's email -->
+  
+app/views/users/show.html.erb:4
+Started GET "/users/" for 127.0.0.1 at 2021-09-18 15:00:01 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-18 15:00:05 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.5ms | Allocations: 117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4238)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 5145)
+
+
+Started GET "/signup" for 127.0.0.1 at 2021-09-18 15:00:06 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 349)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4106)
+Completed 200 OK in 16ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 7689)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 15:00:27 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Uchiha Lerian", "email"=>"itachi@gmail.com"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "itachi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 566)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4247)
+Completed 200 OK in 16ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 7481)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 15:00:29 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Uchiha Lerian", "email"=>"itachi@gmail.com"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "itachi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4196)
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 7288)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 15:00:29 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Uchiha Lerian", "email"=>"itachi@gmail.com"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "itachi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4196)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 7300)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 15:00:30 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Uchiha Lerian", "email"=>"itachi@gmail.com"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "itachi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4197)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 7292)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 15:00:30 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Uchiha Lerian", "email"=>"itachi@gmail.com"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "itachi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 4196)
+Completed 200 OK in 29ms (Views: 22.5ms | ActiveRecord: 0.4ms | Allocations: 7292)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 15:00:30 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Uchiha Lerian", "email"=>"itachi@gmail.com"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "itachi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4197)
+Completed 200 OK in 16ms (Views: 8.0ms | ActiveRecord: 0.4ms | Allocations: 7286)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 15:00:30 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Uchiha Lerian", "email"=>"itachi@gmail.com"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "itachi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4196)
+Completed 200 OK in 15ms (Views: 8.0ms | ActiveRecord: 0.3ms | Allocations: 7285)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 15:00:31 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Uchiha Lerian", "email"=>"itachi@gmail.com"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "itachi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4196)
+Completed 200 OK in 15ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 7285)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 15:00:31 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Uchiha Lerian", "email"=>"itachi@gmail.com"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "itachi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 518)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4196)
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 7287)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-18 20:21:36 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 8.0ms | Allocations: 260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 7269)
+Completed 200 OK in 75ms (Views: 52.5ms | ActiveRecord: 0.0ms | Allocations: 10871)
+
+
+Started GET "/signup" for 127.0.0.1 at 2021-09-18 20:21:37 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 454)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 4230)
+Completed 200 OK in 51ms (Views: 29.9ms | ActiveRecord: 0.7ms | Allocations: 10522)
+
+
+Started GET "/signup" for 127.0.0.1 at 2021-09-18 20:22:12 +0700
+Processing by UsersController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:9:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 355)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4483)
+Completed 200 OK in 21ms (Views: 8.9ms | ActiveRecord: 1.0ms | Allocations: 10487)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:22:13 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4616)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 5101)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2021-09-18 20:22:16 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1076)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 5411)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.5ms | Allocations: 5957)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+Started GET "/users/1" for 127.0.0.1 at 2021-09-18 20:22:17 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 331)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 4239)
+Completed 200 OK in 39ms (Views: 32.7ms | ActiveRecord: 0.3ms | Allocations: 6414)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+Started GET "/users/1/edit" for 127.0.0.1 at 2021-09-18 20:22:18 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 385)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 4745)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 5817)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Lerians"], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:23:37 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.7ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3845)
+Completed 200 OK in 9ms (Views: 7.8ms | Allocations: 4377)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+Started GET "/users/index" for 127.0.0.1 at 2021-09-18 20:23:42 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 6313)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 31911)
+Completed 200 OK in 68ms (Views: 64.6ms | ActiveRecord: 1.1ms | Allocations: 33816)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-09-18 20:23:43 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 24746)
+Completed 200 OK in 42ms (Views: 37.9ms | ActiveRecord: 0.3ms | Allocations: 25926)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:23:44 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3862)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 4274)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:23:49 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/posts/index
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1066)
+
+
+Started GET "/posts/index" for 127.0.0.1 at 2021-09-18 20:23:49 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/posts/index"):
+  
+Started GET "/posts/index" for 127.0.0.1 at 2021-09-18 20:25:31 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/posts/index"):
+  
+Started GET "/posts/" for 127.0.0.1 at 2021-09-18 20:25:33 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/" for 127.0.0.1 at 2021-09-18 20:25:36 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.4ms | Allocations: 117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3855)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4771)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-18 20:25:38 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3804)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4183)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2021-09-18 20:25:39 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 795)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5157)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 5550)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:25:41 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 881)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4751)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.7ms | Allocations: 6739)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:31:02 +0700
+Processing by PostController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/post_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 682)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4433)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.7ms | Allocations: 6403)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:31:03 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4470)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 4993)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:31:07 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms | Allocations: 5028)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:31:07 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 668)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4439)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 4862)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Hello World!"], ["created_at", "2021-09-18 13:33:18.627113"], ["updated_at", "2021-09-18 13:33:18.627113"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:33:23 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2536)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6305)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.6ms | Allocations: 6726)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:33:25 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.5ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4457)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 4837)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:33:28 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1004)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:33:28 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4460)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 4884)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-09-18 20:33:31 +0700
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3860)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4510)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-09-18 20:41:36 +0700
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3803)
+Completed 200 OK in 7ms (Views: 6.4ms | Allocations: 4180)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:41:37 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4473)
+Completed 200 OK in 11ms (Views: 10.0ms | Allocations: 4854)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:42:05 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1699)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:42:05 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 703)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4476)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 4900)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:42:09 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4455)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4835)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:42:13 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1004)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:42:13 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4459)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 4882)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:43:06 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4455)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 4870)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:43:07 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4461)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 4841)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:43:10 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1004)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:43:10 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4460)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 4884)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-18 20:43:26 +0700
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3803)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4179)
+
+
+Started GET "/" for 127.0.0.1 at 2021-09-18 20:43:36 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (Duration: 1.0ms | Allocations: 339)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 7914)
+Completed 200 OK in 64ms (Views: 39.0ms | ActiveRecord: 0.0ms | Allocations: 11423)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:43:37 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 4125)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 5052)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:43:42 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 14ms (ActiveRecord: 1.0ms | Allocations: 6271)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:43:42 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2716)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 6492)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 8021)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:44:16 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 698)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4466)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 4891)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:44:17 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4461)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 4843)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:44:23 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1004)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:44:23 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4459)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 4882)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:44:26 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3861)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4241)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:45:35 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"haninayumi@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "haninayumi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 12ms (ActiveRecord: 1.1ms | Allocations: 5875)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:45:35 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2503)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 6276)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.7ms | Allocations: 7406)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:46:05 +0700
+Processing by PostController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/post_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 6359)
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 1.1ms | Allocations: 8333)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:46:06 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3842)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4363)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:46:09 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"ken@progate.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "ken@progate.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 2940)
+
+
+  
+ActionView::MissingTemplate (Missing template users/login_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/mjlq2/latihan/tweet_app/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.1.4.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.1.4.1/app/views"
+):
+  
+app/controllers/users_controller.rb:57:in `login'
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:46:16 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.4ms | Allocations: 140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4038)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4503)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:46:20 +0700
+Processing by UsersController#form_login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3880)
+Completed 200 OK in 8ms (Views: 7.6ms | Allocations: 4406)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:46:23 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"ken@progate.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "ken@progate.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  Rendering layout layouts/application.html.erb
+  Rendering users/form_login.html.erb within layouts/application
+  Rendered users/form_login.html.erb within layouts/application (Duration: 0.3ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3868)
+Completed 200 OK in 14ms (Views: 6.4ms | ActiveRecord: 0.8ms | Allocations: 6867)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:47:28 +0700
+Processing by UsersController#login_form as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.7ms | Allocations: 261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4375)
+Completed 200 OK in 12ms (Views: 11.0ms | Allocations: 5430)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:47:31 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"ss", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "ss"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms | Allocations: 3487)
+
+
+  
+ActionView::MissingTemplate (Missing template users/form_login with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/mjlq2/latihan/tweet_app/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actiontext-6.1.4.1/app/views"
+  * "/Library/Ruby/Gems/2.6.0/gems/actionmailbox-6.1.4.1/app/views"
+):
+  
+app/controllers/users_controller.rb:57:in `login'
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:47:41 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"ss", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "ss"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.3ms | Allocations: 113)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3879)
+Completed 200 OK in 12ms (Views: 6.2ms | ActiveRecord: 0.9ms | Allocations: 6806)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:47:43 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"dasdas", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "dasdas"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.4ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3874)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 4965)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:48:11 +0700
+Processing by UsersController#login_form as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.8ms | Allocations: 313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 4422)
+Completed 200 OK in 23ms (Views: 21.9ms | Allocations: 5468)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:48:14 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"asa", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "asa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.5ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3876)
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 0.7ms | Allocations: 6657)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 20:48:17 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms | Allocations: 4247)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 20:48:17 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2659)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 6432)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 1.0ms | Allocations: 7966)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 20:48:19 +0700
+Processing by UsersController#login_form as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.6ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4464)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 4845)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 21:03:33 +0700
+Processing by UsersController#login_form as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.8ms | Allocations: 309)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4479)
+Completed 200 OK in 10ms (Views: 9.4ms | Allocations: 5524)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 21:03:34 +0700
+Processing by UsersController#login_form as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.5ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3864)
+Completed 200 OK in 9ms (Views: 8.1ms | Allocations: 4243)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 21:03:36 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:48:in `login'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 12ms (ActiveRecord: 0.8ms | Allocations: 5375)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:03:36 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2536)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 6318)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.2ms | Allocations: 7627)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:04:06 +0700
+Processing by PostController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/post_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2739)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 6920)
+Completed 200 OK in 19ms (Views: 14.5ms | ActiveRecord: 1.0ms | Allocations: 9498)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:04:07 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4458)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 4875)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:04:07 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4458)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 4874)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 21:04:08 +0700
+Processing by UsersController#login_form as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.9ms | Allocations: 313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4177)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 5548)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 21:04:11 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms | Allocations: 4953)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:04:11 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 690)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4470)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 4898)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:04:37 +0700
+Processing by PostController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/post_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 6928)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 1.7ms | Allocations: 9528)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:04:38 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4463)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 4882)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:04:39 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4463)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 4883)
+
+
+Started GET "/post/new" for 127.0.0.1 at 2021-09-18 21:04:40 +0700
+Processing by PostController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/new.html.erb within layouts/application
+  Rendered post/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 343)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4714)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 5247)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-09-18 21:04:40 +0700
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4498)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 5410)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2021-09-18 21:04:41 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 4630)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 8521)
+Completed 200 OK in 21ms (Views: 18.0ms | ActiveRecord: 1.1ms | Allocations: 10231)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+Started GET "/signup" for 127.0.0.1 at 2021-09-18 21:04:42 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4736)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 5259)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
+Started GET "/signup" for 127.0.0.1 at 2021-09-18 21:18:14 +0700
+Processing by UsersController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:9:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4682)
+Completed 200 OK in 19ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 10201)
+
+
+Started POST "/logout" for 127.0.0.1 at 2021-09-18 21:18:16 +0700
+Processing by UsersController#logout as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 279)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 21:18:16 +0700
+Processing by UsersController#login_form as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.7ms | Allocations: 309)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4067)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4558)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-09-18 21:18:20 +0700
+Processing by UsersController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"kanglerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" IS NULL LIMIT ?[0m  [["email", "kanglerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `login'
+Redirected to http://127.0.0.1:3000/post/index
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1039)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:18:20 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2536)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 6328)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 7642)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-09-18 21:18:21 +0700
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 119)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4517)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 5429)
+
+
+Started GET "/post/new" for 127.0.0.1 at 2021-09-18 21:18:23 +0700
+Processing by PostController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/new.html.erb within layouts/application
+  Rendered post/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4718)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 5238)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:18:24 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 5085)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.2ms | Allocations: 5507)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:18:51 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 843)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5177)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 6342)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:18:58 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 838)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5174)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.1ms | Allocations: 6334)
+
+
+Started GET "/post/index" for 127.0.0.1 at 2021-09-18 21:19:08 +0700
+Processing by PostController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  ↳ app/views/post/index.html.erb:3
+  Rendered post/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 838)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5146)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.2ms | Allocations: 6306)
+
+
+Started POST "/logout" for 127.0.0.1 at 2021-09-18 21:19:10 +0700
+Processing by UsersController#logout as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 279)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 21:19:10 +0700
+Processing by UsersController#login_form as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.7ms | Allocations: 309)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4067)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4956)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-09-18 21:31:06 +0700
+Processing by UsersController#login_form as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 1.2ms | Allocations: 314)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4583)
+Completed 200 OK in 13ms (Views: 11.9ms | Allocations: 5631)
+
+
+Started GET "/signup" for 127.0.0.1 at 2021-09-18 21:31:07 +0700
+Processing by UsersController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:9:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4278)
+Completed 200 OK in 22ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 9642)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2021-09-18 21:31:21 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Hanami Lerian", "email"=>"hanamilerian@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hanamilerian@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "image_name", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Hanami Lerian"], ["email", "hanamilerian@gmail.com"], ["created_at", "2021-09-18 14:31:21.750629"], ["updated_at", "2021-09-18 14:31:21.750629"], ["image_name", "default_user.jpeg"], ["password", "lerian"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Redirected to http://127.0.0.1:3000/users/6
+Completed 302 Found in 12ms (ActiveRecord: 1.7ms | Allocations: 3629)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2021-09-18 21:31:21 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 228)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4008)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5210)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2021-09-18 21:31:25 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1032)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5408)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 5932)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/image"):
+  
