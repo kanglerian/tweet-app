@@ -1,16 +1,31 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
+      <div class="post-user-name">
+        <img src="<%= "/assets/image/#{@user.image_name}" %>">
+        <%= link_to(@user.name, "/users/#{@user.id}") %>
+      </div>
       <p>
         <%= @post.content %>
       </p>
       <div class="post-time">
         <%= @post.created_at %>
       </div>
-      <div class="post-menus">
-        <%= link_to("Edit", "/post/#{@post.id}/edit") %>
-        <%= link_to("Delete", "/post/#{@post.id}/destroy", {method: "post"})%>
-      </div>
+      <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+        <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn-unlike"></span>
+        <% end %>
+      <% else %>
+        <%= link_to("/likes/#{@post.id}/create", {method:"post"}) do %>
+          <span class="fa fa-heart like-btn"></span>
+        <% end %>
+      <% end %>
+      <% if @post.user.id == @current_user_id %>
+        <div class="post-menus">
+          <%= link_to("Edit", "/post/#{@post.id}/edit") %>
+          <%= link_to("Delete", "/post/#{@post.id}/destroy", {method: "post"})%>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

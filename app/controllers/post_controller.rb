@@ -1,4 +1,8 @@
 class PostController < ApplicationController
+
+  before_action :authenticate_user
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+
   def index
     @posts = Post.all.order(created_at: :desc)
   end
@@ -9,12 +13,13 @@ class PostController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+    @user = @post.user
   end
 
   def create
-    @post = Post.new(content: params[:content])
+    @post = Post.new(content: params[:content],user_id: @current_user.id)
     if @post.save
-      flash[:notice] = "Alhamdulillaah, data berhasil ditambahkan!"
+      flash[:notice] = "Alhamdulillaah, Postingan berhasil ditambahkan!"
       redirect_to("/post/index")
     else
       render("/post/new")
@@ -41,5 +46,13 @@ class PostController < ApplicationController
     @post.destroy
     flash[:notice] = "Postingan berhasil di hapus!"
     redirect_to("/post/index")
+  end
+
+  def ensure_correct_user
+    @post = Post.find_by(id: params[:id])
+    if @post.user_id != @current_user.id 
+      flash[:notice] = "Unauthorized access"
+      redirect_to("/post/index")
+    end
   end
 end

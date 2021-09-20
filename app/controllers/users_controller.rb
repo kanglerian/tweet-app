@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+  before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
+  before_action :ensure_correct_user, {only: [:edit, :update]}
+
   def index
     @users = User.all
   end
@@ -49,7 +54,7 @@ class UsersController < ApplicationController
   def login
     @user = User.find_by(
       email: params[:email],
-      password: params[:params]
+      password: params[:password]
     )
     if @user
       session[:user_id] = @user.id
@@ -64,5 +69,11 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "Log out telah berhasil!"
     redirect_to("/login")
+  end
+  def ensure_correct_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "Unauthorized access"
+      redirect_to("/users/index")
+    end
   end
 end

@@ -36,7 +36,21 @@
     padding-left: 25px;
     text-align: left;
   }
-  
+
+  /* Change like-btn's color to #8899a6 */
+.like-btn{
+  color:#8899a6;
+}
+
+/* Change like-btn-unlike's color to #ff2581 */
+.like-btn-unlike{
+  color:#ff2581;
+}
+
+.posts-show-item .fa {
+  font-size: 16px;
+  margin-right: 3px;
+}
   /* posts/show ================================ */
   .posts-show form {
     display: inline;
