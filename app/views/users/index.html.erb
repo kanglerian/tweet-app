@@ -11,6 +11,7 @@
         <div class="user-right">
           <!-- Display the user's name -->
           <%= link_to(user.name, "/users/#{user.id}") %>
+          <%= user.password_digest %>
         </div>
       </div>
     <!-- Add an end statement -->

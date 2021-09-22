@@ -14,6 +14,7 @@ class PostController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     @user = @post.user
+    @likes_count = Like.where(post_id: @post.id).count
   end
 
   def create
@@ -50,8 +51,8 @@ class PostController < ApplicationController
 
   def ensure_correct_user
     @post = Post.find_by(id: params[:id])
-    if @post.user_id != @current_user.id 
-      flash[:notice] = "Unauthorized access"
+    if @post.user_id.to_i != @current_user.id
+      flash[:notice] = "Gak bisa akses!"
       redirect_to("/post/index")
     end
   end
